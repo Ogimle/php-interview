@@ -1,25 +1,28 @@
 <?php
 
-class SomeObject {
-    protected $name;
+class SomeObject
+{
+    private $name;
 
-    public function __construct(string $name) { }
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
 
-    public function getObjectName() { }
+    public function getHadlerName()
+    {
+        return 'handle_' . $this->name;
+    }
 }
 
-class SomeObjectsHandler {
-    public function __construct() { }
-
-    public function handleObjects(array $objects): array {
+class SomeObjectsHandler
+{
+    public function handleObjects(array $objects): array
+    {
         $handlers = [];
         foreach ($objects as $object) {
-            if ($object->getObjectName() == 'object_1')
-                $handlers[] = 'handle_object_1';
-            if ($object->getObjectName() == 'object_2')
-                $handlers[] = 'handle_object_2';
+            $handlers[] = $object->getHandlerName();
         }
-
         return $handlers;
     }
 }
