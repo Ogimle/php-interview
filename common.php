@@ -22,9 +22,9 @@ usort($source, function($a, $b) {
 });
 
 usort($source, function($a, $b) {
-    $d1 = DateTime::createFromFormat("d.m.Y H:i:s", $a['time'] . ' 00:00:00')
+    $d1 = DateTime::createFromFormat("d.m.Y H:i:s", $a['date'] . ' 00:00:00')
         ->getTimestamp();
-    $d2 = DateTime::createFromFormat("d.m.Y H:i:s", $b['time'] . ' 00:00:00')
+    $d2 = DateTime::createFromFormat("d.m.Y H:i:s", $b['date'] . ' 00:00:00')
         ->getTimestamp();
 
     return $d1 - $d2;
