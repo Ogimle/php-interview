@@ -49,6 +49,11 @@ $data = array_filter($source, function($item) use ($id) {
  */
 $data = array_column($source, 'id', 'name');
 
+$data = array_reduce($source, function ($acc, $item) {
+    $acc[ $item['name'] ] = $item['id'];
+    return $acc;
+}, []);
+
 /*
  * В базе данных имеется таблица
  * с товарами goods (id INTEGER, name TEXT),
