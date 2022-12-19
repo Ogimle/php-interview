@@ -5,7 +5,7 @@ interface RequestServiceInterface
     public function request(string $url, string $method, array $options = null);
 }
 
-class XMLHttpService extends RequestServiceInterface
+class XMLHttpService implements RequestServiceInterface
 {
     public function request(string $url, string $method, array $options = null)
     {
