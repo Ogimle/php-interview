@@ -64,7 +64,7 @@ select
 from
   goods g
   left join goods_tags gt on (g.id = gt.goods_id)
-  left join tags t on (gt.tag_id = t.id)
+  inner join tags t on (gt.tag_id = t.id)
 order by
   g.name, t.name; 
 SQL;
